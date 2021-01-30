@@ -21,7 +21,7 @@ function findBook(){
                 var div = document.createElement('div');
                 div.className = 'media-body';
                 // create header for body
-                var header = document.createElement('h5');
+                var header = document.createElement('h2');
                 header.className = 'mt-0';
                 header.innerHTML = book.items[i].volumeInfo.title;
                 // append header to the body
@@ -30,7 +30,7 @@ function findBook(){
                 wrapperDiv.appendChild(div);
                 // create h5 element for author
                 var author = document.createElement('h6');
-                author.innerHTML = book.items[i].volumeInfo.authors[i];
+                author.innerHTML = '<b>Author:</b>' + ' ' + book.items[i].volumeInfo.authors[i];
                 div.appendChild(author);
                 // create paragraph for country
                 var country = document.createElement('p');
