@@ -34,12 +34,29 @@ function findBook(){
                 div.appendChild(author);
                 // create paragraph for country
                 var country = document.createElement('p');
-                country.innerHTML = 'Country:' + ' ' + book.items[i].accessInfo.country;
+                country.innerHTML = '<b>Country:</b>' + ' ' + book.items[i].accessInfo.country;
                 div.appendChild(country);
+                 //create paragraph for page count 
+                 var pageCount = document.createElement('p');
+                 pageCount.innerHTML = '<b>Pages:</b>' + ' ' +  book.items[i].volumeInfo.pageCount;
+                 div.appendChild(pageCount);
+                //create element for date
+                var year = document.createElement('p');
+                year.innerHTML = '<b>Published:</b>' + ' ' + book.items[i].volumeInfo.publishedDate;
+                div.appendChild(year);
+                //create element for publisher
+                var publisher = document.createElement('p');
+                publisher.innerHTML = '<b>Publisher:</b>' + ' ' + book.items[i].volumeInfo.publisher;
+                div.appendChild(publisher);
                 // create element for discription
                 var desc = document.createElement('p');
                 desc.innerHTML = book.items[i].volumeInfo.description;
                 div.appendChild(desc);
+                //create a tag to target book
+                var link = document.createElement('a');
+                link.innerHTML = 'View more'
+                link.href = book.items[i].volumeInfo.previewLink;
+                div.appendChild(link);
                 // create hr to separate every books info
                 var line = document.createElement('hr');
                 // Make every elements as children element of bookResult
